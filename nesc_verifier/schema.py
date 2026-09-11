@@ -6,7 +6,7 @@ from pydantic import BaseModel, Field
 
 
 class PoleLoadingInputs(BaseModel):
-      """Inputs describing a single overhead distribution pole design."""
+    """Inputs describing a single overhead distribution pole design."""
 
     pole_class: str = Field(description="e.g. 'Class 5'")
     pole_height_ft: float
@@ -14,7 +14,7 @@ class PoleLoadingInputs(BaseModel):
     total_wind_load_lb: float
     groundline_moment_ft_lb: float
     pole_capacity_utilization_pct: float = Field(
-              description="Groundline moment as a percentage of rated pole capacity."
+        description="Groundline moment as a percentage of rated pole capacity."
     )
     guy_wire_tension_lb: float | None = None
     required_anchor_capacity_lb: float | None = None
@@ -23,14 +23,14 @@ class PoleLoadingInputs(BaseModel):
 
 
 class RuleResult(BaseModel):
-      rule_id: str
-      description: str
-      passed: bool
-      detail: str
+    rule_id: str
+    description: str
+    passed: bool
+    detail: str
 
 
 class VerificationReport(BaseModel):
-      """Structured output returned by the agent for a single calc package."""
+    """Structured output returned by the agent for a single calc package."""
 
     inputs: PoleLoadingInputs
     rule_results: list[RuleResult]
