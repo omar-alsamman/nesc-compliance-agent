@@ -46,13 +46,14 @@ tests/
 
 `rules.py` and `schema.py`: implemented, deterministic, no API key required.
 `agent.py`: skeleton in place — needs an `ANTHROPIC_API_KEY` to run the LLM
-extraction/reasoning layer.
+extraction/reasoning layer. **Free alternative available now:** `nesc_verifier/text_parser.py` uses regex (no API key, no cost) to pull structured inputs out of a plain-text calc summary -- covers common labeled formats out of the box.
 
 ## Roadmap
 
 - [x] Deterministic rule engine (grounding, structural capacity)
 - [x] Ground-truth regression test against a real completed project
-- [ ] LLM extraction layer (free-text calc summary → structured values)
+- [x] Free-text extraction layer (regex-based, no API key) -- `text_parser.py`
+- [ ] LLM extraction layer (free-text calc summary → structured values, handles messier input than regex)
 - [ ] Retrieval over full NESC rule text (currently a condensed excerpt)
 - [ ] CLI / simple web front-end for pasting in a calculation package
 - [ ] Eval harness: run against a small set of intentionally-flawed
