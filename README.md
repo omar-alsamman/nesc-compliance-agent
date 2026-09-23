@@ -1,3 +1,5 @@
+[![Tests](https://github.com/omar-alsamman/nesc-compliance-agent/actions/workflows/tests.yml/badge.svg)](https://github.com/omar-alsamman/nesc-compliance-agent/actions/workflows/tests.yml)
+
 # NESC Compliance & Calculation Verification Agent
 
 An AI agent that reviews electric distribution engineering calculations — pole
@@ -66,3 +68,28 @@ pip install -r requirements.txt
 pytest                      # runs the deterministic rule tests — no API key needed
 export ANTHROPIC_API_KEY=... # required only for agent.py's LLM layer
 ```
+
+
+## Conversational agent mode (`agent.py`)
+
+The browser demo and `text_parser.py`/`rules.py` run fixed, deterministic checks with no LLM and no API key. `agent.py` adds a second, separate mode: a conversational agent that wraps those same checks as tools an LLM can call, so you can ask about a design in plain language instead of pasting a full summary.
+
+The LLM never states a pass/fail or a numeric limit on its own. It calls `check_grounding`, `check_pole_capacity`, or `check_guy_anchor` and answers only from what the tool returns, citing the rule ID.
+
+### Run it
+
+```
+pip install anthropic
+export ANTHROPIC_API_KEY=sk-...
+python agent.py
+```
+
+### Example
+
+```
+> My final ground resistance came out to 32 ohms and pole capacity is at 91%, am I compliant?
+Grounding fails NESC-092: 32 ohm exceeds the 25 ohm limit.
+Pole capacity passes STRUCT-CAP: 91% is within rated capacity.
+```
+
+This requires your own Anthropic API key and runs locally, unlike the no-key browser demo above.
