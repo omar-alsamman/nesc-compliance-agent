@@ -15,7 +15,7 @@ electric distribution design experience (pole loading, guying/grounding
 analysis, NESC Grade C construction — see
 [Residential Distribution Pole Design](https://drive.google.com/file/d/1UbCusSvVxF3nWbjKZy5suWxR1xAtEST5/view))
 and AI response evaluation (rubric-based rating, calculation reconciliation,
-spec verification — current work on the Handshake AI Fellowship / Project
+spec verification — completed work (Jul 2026 – Sep 2026) on the Handshake AI Fellowship / Project
 Hedgehog). Instead of a generic LLM-wrapper demo, this is a domain expert
 building the tool they'd actually want on the job.
 
