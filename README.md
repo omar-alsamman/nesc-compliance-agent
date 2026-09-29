@@ -47,8 +47,7 @@ tests/
 ## Status
 
 `rules.py` and `schema.py`: implemented, deterministic, no API key required.
-`agent.py`: skeleton in place — needs an `ANTHROPIC_API_KEY` to run the LLM
-extraction/reasoning layer. **Free alternative available now:** `nesc_verifier/text_parser.py` uses regex (no API key, no cost) to pull structured inputs out of a plain-text calc summary -- covers common labeled formats out of the box.
+The deterministic rule engine and the free text parser run with no API key. The optional LLM extraction layer in agent.py needs an ANTHROPIC_API_KEY. **Free alternative available now:** `nesc_verifier/text_parser.py` uses regex (no API key, no cost) to pull structured inputs out of a plain-text calc summary -- covers common labeled formats out of the box.
 
 ## Roadmap
 
