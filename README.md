@@ -55,8 +55,9 @@ The deterministic rule engine and the free text parser run with no API key. The 
 - [x] Ground-truth regression test against a real completed project
 - [x] Free-text extraction layer (regex-based, no API key) -- `text_parser.py`
 - [ ] LLM extraction layer (free-text calc summary → structured values, handles messier input than regex)
+  Conversational agent mode in agent.py is available separately, see below.
 - [ ] Retrieval over full NESC rule text (currently a condensed excerpt)
-- [ ] CLI / simple web front-end for pasting in a calculation package
+- [x] Browser demo, live on the portfolio site
 - [ ] Eval harness: run against a small set of intentionally-flawed
       calculation packages to measure catch rate
 
